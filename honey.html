@@ -30,8 +30,9 @@
         }, 800);
     });
 
-        // Set the date Pooh ate all the honey (Year, Month-1, Day) -> e.g., Jan 1, 2023
-    const disasterDate = new Date(2023, 0, 1);
+  document.addEventListener("DOMContentLoaded", function () {
+    // Set the date Pooh ate all the honey (Year, Month-1, Day)
+    const disasterDate = new Date(2000, 10, 19);
     const today = new Date();
 
     // Calculate difference in days
@@ -40,7 +41,8 @@
 
     // Update the number in the ticker
     document.getElementById("honey-days").textContent = diffDays.toLocaleString();
-
+});
+    
     </script>
     <body>
         <!-- NAVIGATION BAR -->
