@@ -1,0 +1,158 @@
+body {
+    background-image: url("honeybackground.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-size: 500px;
+    font-family: 'Courier New', monospace;
+}
+
+.pooh-box {
+    background-color: rgba(255, 250, 240, 0.88);
+    border: 2px solid #8c6d53;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 40px;
+    max-width: 800px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background-color: #6b4f3a;   /* Vintage sepia brown */
+    color: #fffaf0;              /* Warm cream text */
+    padding: 8px 0;
+    border-bottom: 2px solid #eba937; /* Pooh red accent border */
+    white-space: nowrap;
+}
+
+.ticker {
+    display: inline-block;
+    padding-left: 100%;          /* Starts off-screen to the right */
+    animation: ticker-scroll 20s linear infinite;
+}
+
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2.5rem;           /* Spacing between headlines */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+@keyframes ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.honey-drop {
+    position: absolute;
+    pointer-events: none; /* Ensures the drops don't block you from clicking buttons */
+    width: 14px;
+    height: 18px;
+    background-color: #f4c44e; /* Golden honey color */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Gives it a teardrop shape */
+    box-shadow: inset -2px -2px 0px rgba(184, 115, 51, 0.4); /* Gives it a glossy sheen */
+    animation: drop-fade 0.8s linear forwards;
+    z-index: 9999;
+}
+
+@keyframes drop-fade {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(25px) scale(0.4); /* Sinks down slightly and shrinks */
+        opacity: 0;
+    }
+}
+
+.memorial-plaque {
+    background-color: #fdf8ee;           /* Aged ivory parchment */
+    border: 6px double #6b4f3a;          /* Classic double-line Victorian frame */
+    border-radius: 4px;                  /* Sharp, formal corners */
+    padding: 40px 35px;
+    margin: 40px auto;
+    max-width: 720px;
+    text-align: center;
+    box-shadow:
+        0 10px 25px rgba(107, 79, 58, 0.2),
+        inset 0 0 30px rgba(107, 79, 58, 0.12); /* Soft inner aged-paper shadow */
+}
+
+.memorial-header {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8c6d53;
+    margin-bottom: 10px;
+}
+
+.memorial-name {
+    font-size: 2.2rem;
+    color: #6b4f3a;
+    display: inline-block;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+}
+
+.memorial-portrait {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;                  /* Oval/round Victorian locket frame */
+    border: 4px double #6b4f3a;
+    filter: sepia(65%) contrast(105%);   /* Makes any photo look dramatically old-timey */
+    margin: 15px 0;
+}
+
+.memorial-epitaph {
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #6b4f3a;
+    max-width: 520px;
+    margin: 15px auto 0 auto;
+    line-height: 1.6;
+}
+
+/* Forecast layout */
+#forecast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.card {
+  flex: 0 0 220px;
+  background: #fffdf5;
+  border: 2px solid #6b4f3a;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 4px 4px 0 #d9b779;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 0.4rem 0;
+  line-height: 1.4;
+}
+
+.card p:first-of-type {
+  color: #6b4f3a;
+  font-style: italic;
+}

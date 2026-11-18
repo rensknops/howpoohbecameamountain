@@ -1,0 +1,11 @@
+Tags: div, a, button, ul, li, h1, p, br, h2, section
+
+CSS:
+1. border-radius: rounds the corners of an element
+2. padding: adds space between an element's border and content.
+3. box-shadow: adds a coloured offset shadow to each card in "weather forecast"
+4. gap: sets equal space between the forecast cards
+5. display: sets the forecast container to flex so the cards are side by side.
+
+JavaScript and Bootstrap:
+I used JS to build the forecast cards from an array with a loop and to create the honey-drop effect on mouse movement, and I used Bootstrap for the responsive Navbar and layout classes.

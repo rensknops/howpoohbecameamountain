@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link href="styles.css" rel="stylesheet">
+    </head>
+    <script>
+    // Tracks mouse movement and spawns a honey drop every few pixels
+    document.addEventListener("mousemove", function(e) {
+        // Create a drop element
+        const drop = document.createElement("div");
+        drop.classList.add("honey-drop");
+
+        // Position the drop right at the cursor coordinates
+        drop.style.left = (e.pageX - 7) + "px";
+        drop.style.top = (e.pageY - 5) + "px";
+
+        // Add it to the page body
+        document.body.appendChild(drop);
+
+        // Remove the element from the DOM after the 0.8s animation finishes to keep memory clean
+        setTimeout(function() {
+            drop.remove();
+        }, 800);
+    });
+
+        // Set the date Pooh ate all the honey (Year, Month-1, Day) -> e.g., Jan 1, 2023
+    const disasterDate = new Date(2023, 0, 1);
+    const today = new Date();
+
+    // Calculate difference in days
+    const diffTime = Math.abs(today - disasterDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+    // Update the number in the ticker
+    document.getElementById("honey-days").textContent = diffDays.toLocaleString();
+
+    </script>
+    <body>
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar navbar-expand-lg" style="background-color: #6b4f3a;" data-bs-theme="dark">
+            <div class="container" style="justify-content: flex-start; gap: 2rem;">
+
+                <!-- Brand / Logo and Title -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="winnie.png" alt="Winnie the Pooh" width="55" height="55" class="rounded-circle d-inline-block align-text-top">
+                </a>
+
+                <!-- Navbar Toggler for mobile screens -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible Links -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="winnie.html">Memorial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="honey.html">Weather Forecast</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Plan your Visit</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+                         <!-- ticker-->
+                 <div class="ticker-wrap">
+                    <div class="ticker">
+                        <span class="ticker-item"> <span id="honey-days">1,428</span> days since anyone had a decent tea with honey</span>
+                    </div>
+                 </div>
+
+        <!-- HOMEPAGE CONTENT -->
+        <div class="container pooh-box">
+            <h1>How Pooh Became a Mountain</h1>
+            <p>It started on a tuesday when Pooh realized asking for honey was dumb. he was a bear with a tiny brain who concluded honey was only being made for him to eat.</p>
+            <p>So he just started taking all the honey.</p>
+            <p>First he ate all of rabbit's honey. Rabbit got mad and yelled at him, so Pooh just sat on him until rabbit stopped breathing. Piglet saw it happen and got so scared her heart gave out and she died right there in the dirt. Eeyore watched from the mud and was mostly just mad that Pooh didnt sit on him too.</p>
+            <p>Pooh didn't care. He ate whole beehives, wood, bees, everything, without chewing.</p>
+            <p>He got really fat really fast. His red shirt ripped off and got lost somewhere in his back rolls. Soon he was as big as a garbage truck.</p>
+            <p>When the woods ran out of honey, Pooh couldn't walk anymore, so he just rolled onto the road. He squished cars and flattened houses just to get to the honey factories. He drank whole vats of honey and rolled right over the workers when they tried to stop him.</p>
+            <p>He ate so much that he got as big as a building. By winter, he had eaten literally all the honey on earth. All the bees were out of a job, the economy was totally ruined.</p>
+            <p>Pooh eventually rolled back to the woods and got wedged upside down in a ditch. He was too fat to move. Eventually the government just gave up trying to move him, declared him a permanent mountain, and built a highway around him.</p>
+            <p>Rich guys from California started paying $50,000 dollars just to hike up his left leg and plant a little flag on his nipple.</p>
+
+        </div>
+
+        <!-- Bootstrap JavaScript Bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
+</html>
